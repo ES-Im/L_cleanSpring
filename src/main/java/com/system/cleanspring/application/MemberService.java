@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.Optional;
+
 /*
  *
  */
@@ -35,6 +37,16 @@ public class MemberService implements MemberRegister {
         sendWelcomeEmail(member);
 
         return member;
+    }
+
+    @Override
+    public Member activate(Long id) {
+        Member member = memberRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("회원을 찾을 수 없습니다. id:" + id));
+
+        member.activate();
+
+        return memberRepository.save(member);   // Spring Data JPA의 특징 
     }
 
     private void sendWelcomeEmail(Member member) {
