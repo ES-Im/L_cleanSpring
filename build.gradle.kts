@@ -26,6 +26,8 @@ repositories {
     mavenCentral()
 }
 
+val mockitoAgent: Configuration = configurations.create("mockitoAgent")
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -40,7 +42,7 @@ dependencies {
 
     // jpa
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+//    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
 
     //lombok
     compileOnly("org.projectlombok:lombok")
@@ -49,7 +51,7 @@ dependencies {
     testCompileOnly("org.projectlombok:lombok")
 
     //db
-    runtimeOnly("com.h2database:h2")
+//    runtimeOnly("com.h2database:h2")
     runtimeOnly("com.mysql:mysql-connector-j")
 
     // docker compose
@@ -59,6 +61,9 @@ dependencies {
     implementation("org.jspecify:jspecify:1.0.0")
     errorprone("com.google.errorprone:error_prone_core:2.48.0")
     errorprone("com.uber.nullaway:nullaway:0.13.1")
+//    testImplementation("org.junit-pioneer:junit-pioneer:2.3.0")
+
+    mockitoAgent("org.mockito:mockito-core:5.18.0") { isTransitive = false }
 }
 
 nullaway {
@@ -67,6 +72,7 @@ nullaway {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    jvmArgs("-javaagent:${mockitoAgent.asPath}")
 }
 
 tasks.withType<JavaCompile>().configureEach {

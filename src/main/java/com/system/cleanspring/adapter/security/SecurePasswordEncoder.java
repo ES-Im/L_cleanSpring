@@ -1,7 +1,6 @@
 package com.system.cleanspring.adapter.security;
 
-import com.system.cleanspring.domain.PasswordEncoder;
-import org.jspecify.annotations.NullUnmarked;
+import com.system.cleanspring.domain.member.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 

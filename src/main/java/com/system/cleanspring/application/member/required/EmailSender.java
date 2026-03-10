@@ -1,6 +1,6 @@
-package com.system.cleanspring.application.required;
+package com.system.cleanspring.application.member.required;
 
-import com.system.cleanspring.domain.Email;
+import com.system.cleanspring.domain.shared.Email;
 
 /*
  * 이메일을 발송한다.

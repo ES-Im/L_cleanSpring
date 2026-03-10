@@ -1,8 +1,5 @@
 package com.system.cleanspring.domain.member;
 
-import com.system.cleanspring.domain.Member;
-import com.system.cleanspring.domain.MemberRegisterRequest;
-import com.system.cleanspring.domain.PasswordEncoder;
 import org.springframework.test.util.ReflectionTestUtils;
 
 public class MemberFixture {

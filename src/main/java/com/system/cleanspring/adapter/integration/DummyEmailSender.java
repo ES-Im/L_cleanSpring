@@ -1,11 +1,12 @@
 package com.system.cleanspring.adapter.integration;
 
-import com.system.cleanspring.application.required.EmailSender;
-import com.system.cleanspring.domain.Email;
+import com.system.cleanspring.application.member.required.EmailSender;
+import com.system.cleanspring.domain.shared.Email;
 import org.springframework.context.annotation.Fallback;
 import org.springframework.stereotype.Component;
 
 @Component
+@Fallback
 public class DummyEmailSender implements EmailSender {
 
     @Override

@@ -1,7 +1,7 @@
 package com.system.cleanspring;
 
-import com.system.cleanspring.application.required.EmailSender;
-import com.system.cleanspring.domain.PasswordEncoder;
+import com.system.cleanspring.application.member.required.EmailSender;
+import com.system.cleanspring.domain.member.PasswordEncoder;
 import com.system.cleanspring.domain.member.MemberFixture;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;

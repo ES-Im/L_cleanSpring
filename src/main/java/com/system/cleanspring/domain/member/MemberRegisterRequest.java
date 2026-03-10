@@ -1,4 +1,4 @@
-package com.system.cleanspring.domain;
+package com.system.cleanspring.domain.member;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;

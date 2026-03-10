@@ -1,4 +1,4 @@
-package com.system.cleanspring.domain;
+package com.system.cleanspring.domain.member;
 
 public interface PasswordEncoder {
     String encode(String password);

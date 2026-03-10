@@ -118,3 +118,5 @@ public void saveAntiPattern(Long postId, String postTitle) {
  - 근데 또, spring data JPA에서는 기술 추상화를 위한 일관성을 위해서 쓰라는데, 결국 SimpleJpa랑 뿌리랑 기술 추상화 일관성 목표는 같을텐데 왜 다른 결과인지도 모르겠어... 헷갈리는게 많네 
  - 즉, Myasset 프로젝트를 spring data jpa로 변경해야할 건지(배치 쓸 일이 많은데 위 내용이 내가 이해한게 맞다면 JPARepository보다 spring data jpa를 쓰는게 더 이식성 좋아보임)
  - 아니면 required port부분 유지하되, save자체를 다 정리하는게 맞는지?  
+
+

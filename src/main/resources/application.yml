@@ -1,2 +1,15 @@
 spring:
-  application.name: cleanSpring
+  application:
+    name: splearn
+  datasource:
+    url: jdbc:mysql://localhost:3306/splearn
+    username: root
+    password: verysecret
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+  docker:
+    compose:
+      lifecycle-management: start_only
