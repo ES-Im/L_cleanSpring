@@ -30,12 +30,14 @@ val mockitoAgent: Configuration = configurations.create("mockitoAgent")
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    testImplementation("org.springframework.security:spring-security-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    implementation("org.springframework.boot:spring-boot-starter-security")
-    testImplementation("org.springframework.security:spring-security-test")
 
     // bean validation
     implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -62,6 +64,9 @@ dependencies {
     errorprone("com.google.errorprone:error_prone_core:2.48.0")
     errorprone("com.uber.nullaway:nullaway:0.13.1")
 //    testImplementation("org.junit-pioneer:junit-pioneer:2.3.0")
+
+    // archUnit
+    testImplementation("com.tngtech.archunit:archunit-junit5:1.4.1 ")
 
     mockitoAgent("org.mockito:mockito-core:5.18.0") { isTransitive = false }
 }
